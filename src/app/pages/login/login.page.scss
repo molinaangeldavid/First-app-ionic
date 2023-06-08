@@ -1,0 +1,28 @@
+ion-content {
+    --background: url("../../../assets/background-input.jpg") no-repeat fixed center;
+    height: 20%;
+}
+ion-icon{
+    font-size: 3rem;
+    position: relative;
+    bottom: 20px;
+}
+ion-input{
+    --highlight-color-focused: transparent;
+    --border-width: 0 0 1px 0;
+    --border-style: solid;
+    --border-color: #000000; /* Adjust the color as needed */
+}
+.container-input-div{
+    width: 80%;
+    margin: auto;
+    height: 100vh;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
+.container-content-input{
+    background-color: rgba(3, 3, 3, 0.6);
+    
+}
