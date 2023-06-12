@@ -1,0 +1,21 @@
+.container-flex-message{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h3{
+    font-size: 1rem;
+    font-weight: 700;
+}
+p.message-text{
+    font-weight: 300;
+    font-size: .9rem;
+}
+.icon-delete{
+    justify-items: end;
+    font-size: 20px;
+    color: rgb(188, 41, 68);
+    cursor: pointer;
+}

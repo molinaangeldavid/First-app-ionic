@@ -1,20 +1,49 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header [translucent]="true" class="header">
+  <ion-toolbar class="toolbar" color="dark">
+    <div class="container-toolbar">
+      <ion-title>
+        MiApp
+      </ion-title>
+      <!-- <a routerLink="/"><ion-icon name="log-out-outline"></ion-icon></a> -->
+      <ion-icon name="log-out-outline" (click)="goInput()"></ion-icon>
+    </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">MiApp</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <ion-accordion-group expand="inset" class="ion-padding-top">
+    <ion-accordion value="first" >
+      <ion-item slot="header" color="dark">
+        <ion-label>Usuario</ion-label>
+      </ion-item>
+      <div class="ion-padding" id="contain-user" slot="content">
+        <div>
+          <ion-input label="Nombre: " type="text" [(ngModel)]="user.name"></ion-input>
+        </div>
+        <div>
+          <ion-input label="Apellido: " type="text" [(ngModel)]="user.lastname"></ion-input>
+        </div>
+        <ion-button class="button-edit">Actualizar</ion-button>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+
+  <div class="container-messages" >
+    <h2>Mensajes</h2>
+    <div>
+      <span class="span-message-title">Generar Mensaje</span>
+      <div>
+        <ion-textarea label="Mensaje: " placeholder="Escriba aqui" [(ngModel)]="message" class="ion-padding-bottom"></ion-textarea>
+      </div>
+      <ion-button class="button-message" type="submit" color="danger" (click)="sendMessage()">Publicar</ion-button>
+    </div>
   </div>
+  <app-messages [messages]="messages"></app-messages>
+  
 </ion-content>

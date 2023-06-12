@@ -1,17 +1,31 @@
-<ion-content>
+<ion-content [scrollEvents]="false" no-bounce>
   <div class="container-input-div">
     <div class="container-content-input">
       <div class="content-person-icon">
         <ion-icon name="person-circle"></ion-icon>
       </div>
       <div class="ion-padding">
-            <ion-label for="">Name:</ion-label>
-            <ion-input placeholder="John"></ion-input>
-            <ion-input label="Last Name: " placeholder="Doe"></ion-input>
-            <ion-input label="Password: "></ion-input>
+        <div class="container-input">
+          <ion-label for="name" stacked="fixed">Nombre</ion-label>
+          <ion-input placeholder="John" type="text" [(ngModel)]="user.name"></ion-input>
         </div>
-
+        <div class="container-input">
+          <ion-label for="last name" stacked="fixed">Apellido</ion-label>
+          <ion-input placeholder="Doe" type="text" [(ngModel)]="user.lastName"></ion-input>
+        </div>
+        <div class="container-input">
+          <ion-label for="password" stacked="fixed">Contraseña</ion-label>
+          <ion-input placeholder="***" type="password" [(ngModel)]="user.password"></ion-input>
+        </div>
+        
+        <ion-button 
+        id="submit-button" 
+        type="submit" 
+        class="button-submit" 
+        color="danger" 
+        (click)="logIn()"
+        >Ingresar</ion-button>
+      </div>
     </div>
-    
   </div>
 </ion-content>

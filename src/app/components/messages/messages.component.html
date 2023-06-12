@@ -1,0 +1,15 @@
+<div *ngIf="messages.length > 0">
+  <ion-list>
+    <ion-item *ngFor="let m of messages; let i = index" color="dark">
+      <div class="container-flex-message">
+        <div>
+          <h3>{{m.name}} {{m.lastname}} - {{m.date | fechaDate}}</h3>
+          <p class="message-text">{{m.message}}</p>
+        </div>
+        <div class="icon-delete">
+          <ion-icon name="trash-outline" (click)="deleteMessage(i)"></ion-icon>
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+</div>
